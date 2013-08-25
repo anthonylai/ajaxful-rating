@@ -33,7 +33,7 @@ module AjaxfulRating # :nodoc:
       class << self
         def axr_config
           @axr_config ||= {
-            :stars => 5,
+#            :stars => 5,
             :allow_update => true,
             :cache_column => :rating_average
           }
@@ -199,7 +199,7 @@ module AjaxfulRating # :nodoc:
     #
     #   ajaxful_rateable :stars => 10
     def max_stars
-      axr_config[:stars]
+      axr_config[:stars] || 5
     end
 
     # Allow stars to be set and averaged to nearest whatever. eg. 0.5 for the nearest half-star
