@@ -28,7 +28,6 @@ module AjaxfulRating # :nodoc:
           @axr_config ||= {}
           dimension = dimension.to_sym
           @axr_config[dimension] ||= {
-            :stars => 5,
             :allow_update => true,
             :cache_column => :rating_average
           }
@@ -198,7 +197,7 @@ module AjaxfulRating # :nodoc:
     #
     #   ajaxful_rateable :stars => 10
     def max_stars(dimension = nil)
-      axr_config(dimension)[:stars]
+      axr_config(dimension)[:stars] || 5
     end
 
     # Name of the class for the user model.
